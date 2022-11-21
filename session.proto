@@ -1,0 +1,27 @@
+syntax = "proto2";
+package xxlink;
+
+import "commands.proto";
+import "track.proto";
+import "voice.proto";
+
+message SessionOpen{
+	/* empty */
+}
+
+message SessionClose{
+	/* empty */
+}
+
+message SessionMessage{
+	required uint32 session = 1;
+
+	oneof data{
+		SessionOpen session_open = 2;
+		SessionClose session_close = 3;
+
+		VoiceConnectionControl voice_connection_control = 4;
+		TrackControl track_control = 5;
+		Commands commands = 6;
+	}
+}

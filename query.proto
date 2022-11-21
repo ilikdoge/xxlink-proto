@@ -1,0 +1,45 @@
+syntax = "proto2";
+package xxlink;
+
+import "quality.proto";
+import "stats.proto";
+
+enum State{
+	IDLE = 0;
+	PLAY = 1;
+	PAUSE = 2;
+	LOAD = 3;
+	PLAY_SILENT = 4;
+}
+
+message StateResponse{
+	required double time = 1;
+	required double duration = 2;
+	required State state = 3;
+	required double ttl = 4; /* time it took from initiating playback to actually playing */
+	required bool source = 5; /* see quality.proto for more info */
+	required uint32 sent_frames = 6;
+	required uint32 dropped_frames = 7;
+}
+
+message QueryResponse{
+	required uint32 nonce = 1;
+
+	oneof data{
+		StateResponse state = 2;
+		QualityResponse quality = 3;
+		StatsResponse stats_response = 4;
+	}
+}
+
+enum QueryType{
+	QUERY_STATE = 1;
+	QUERY_QUALITY = 2;
+	QUERY_STATS = 3;
+}
+
+message Query{
+	required uint32 nonce = 1;
+	required QueryType type = 2;
+	optional uint32 session = 3;
+}

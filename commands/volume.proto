@@ -1,0 +1,6 @@
+syntax = "proto2";
+package xxlink;
+
+message VolumeCommand{
+	required double volume = 1;
+}

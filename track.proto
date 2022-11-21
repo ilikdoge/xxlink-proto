@@ -1,0 +1,59 @@
+syntax = "proto2";
+package xxlink;
+
+import "query.proto";
+
+message Track{
+	required uint32 nonce = 1;
+	required string identifier = 2;
+	optional string url = 3;
+	required double start_time = 4;
+	required double stop_time = 5;
+}
+
+message TrackStarted{
+	required uint32 nonce = 1;
+	required StateResponse state = 2;
+}
+
+message TrackFinished{
+	required StateResponse state = 1;
+}
+
+enum TrackErrorReason{
+	MEMORY = 0;
+	DATA_TIMEOUT = 1; /* took to long to start playing or to receive data */
+	RESOURCE_ERROR = 2;
+	PLATFORM_ERROR = 3;
+	UNSUPPORTED = 4;
+	DECODE_ERROR = 5;
+	GENERIC_ERROR = 6;
+}
+
+message TrackError{
+	required StateResponse state = 1;
+	required TrackErrorReason reason = 2;
+}
+
+message TrackMetadata{
+	required StateResponse state = 1;
+}
+
+message TrackState{
+	required StateResponse state = 1;
+}
+
+message NextTrackRequest{
+	/* empty */
+}
+
+message TrackControl{
+	oneof data{
+		/* node -> app */
+		TrackStarted started = 1;
+		TrackFinished finished = 2;
+		TrackMetadata metadata = 3;
+		TrackState state = 4;
+		NextTrackRequest next_request = 5;
+	}
+}

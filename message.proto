@@ -1,0 +1,28 @@
+syntax = "proto2";
+package xxlink;
+
+import "session.proto";
+import "query.proto";
+
+/* mutual */
+message Ping{
+	required uint32 nonce = 1;
+}
+
+/* node -> app */
+enum Error{
+	TIMEOUT = 0;
+	INVALID_MESSAGE = 1;
+	INVALID_SESSION = 2;
+}
+
+message Message{
+	oneof data{
+		Ping ping = 1;
+		Error error = 2;
+		SessionMessage session_message = 3;
+
+		Query query = 4;
+		QueryResponse query_response = 5;
+	}
+}

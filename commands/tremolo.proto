@@ -1,0 +1,7 @@
+syntax = "proto2";
+package xxlink;
+
+message TremoloCommand{
+	required double rate = 1;
+	required double depth = 2;
+}

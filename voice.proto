@@ -1,0 +1,49 @@
+syntax = "proto2";
+package xxlink;
+
+message VoiceStateUpdate{
+	optional string guild_id = 1;
+	required string user_id = 2;
+	required string session_id = 3;
+	optional string channel_id = 4;
+	required bool deaf = 5;
+	required bool mute = 6;
+}
+
+message VoiceServerUpdate{
+	required string token = 1;
+	optional string endpoint = 2;
+}
+
+message VoiceConnected{
+	/* empty */
+}
+
+message VoiceReconnecting{
+	/* empty */
+}
+
+enum VoiceDisconnectedReason{
+	CONNECT_TIMEOUT = 0;
+	PROTOCOL_ERROR = 1;
+	HEARTBEAT_TIMEOUT = 2;
+	NO_ENDPOINT = 3;
+	DISCONNECTED = 4;
+}
+
+message VoiceDisconnected{
+	required VoiceDisconnectedReason reason = 1;
+}
+
+message VoiceConnectionControl{
+	oneof data{
+		/* app -> node */
+		VoiceServerUpdate server_update = 1;
+		VoiceStateUpdate state_update = 2;
+
+		/* node -> app */
+		VoiceConnected connected = 3;
+		VoiceReconnecting reconnecting = 4;
+		VoiceDisconnected disconnected = 5;
+	}
+}

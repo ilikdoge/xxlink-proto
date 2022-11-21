@@ -1,0 +1,11 @@
+syntax = "proto2";
+package xxlink;
+
+message EqualizerSetting{
+	required double frequency = 1;
+	required double gain = 2;
+}
+
+message EqualizerCommand{
+	repeated EqualizerSetting levels = 1;
+}

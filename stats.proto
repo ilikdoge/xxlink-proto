@@ -1,0 +1,14 @@
+syntax = "proto2";
+package xxlink;
+
+message StatsResponse{
+	required uint32 players_total = 1;
+	required uint32 players_active = 2;
+	required uint32 players_slow = 3;
+	required double playback_quality_avg = 4;
+	required double playback_quality_low = 5; /* 1% low playback quality */
+	required uint64 mem_virt_kb = 6;
+	required uint64 mem_rss_kb = 7;
+	required double cpu_sys = 8;
+	required double cpu_usr = 9;
+}

@@ -1,0 +1,6 @@
+syntax = "proto2";
+package xxlink;
+
+message BitrateCommand{
+	required uint32 bitrate = 1;
+}

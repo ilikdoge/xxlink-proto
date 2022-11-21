@@ -1,0 +1,8 @@
+syntax = "proto2";
+package xxlink;
+
+import "track.proto";
+
+message PlayCommand{
+	required Track track = 1;
+}
