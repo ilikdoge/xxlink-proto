@@ -17,8 +17,8 @@ message SessionMessage{
 	required uint32 session = 1;
 
 	oneof data{
-		SessionOpen session_open = 2;
-		SessionClose session_close = 3;
+		SessionOpen open = 2;
+		SessionClose close = 3;
 
 		VoiceConnectionControl voice_connection_control = 4;
 		TrackControl track_control = 5;

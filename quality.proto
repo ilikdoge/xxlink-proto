@@ -14,15 +14,15 @@ message ConnectionQuality{
 	required uint32 jitter_avg = 8; /* avg per sec */
 	required uint32 jitter_high = 9; /* top 1% jitter per sec */
 	required double quality = 10; /* jitter quality * (100% - (1% highest loss percent))^25 */
-								 /* jitter quality = table[top 1% jitter per packet] */
-								 /* < 10ms = 100% */
-								 /* < 20ms = 90% */
-								 /* < 30ms = 80% */
-								 /* < 40ms = 70% */
-								 /* < 50ms = 50% */
-								 /* 50-100ms = 30% */
-								 /* 100-200ms = 15% */
-								 /* >= 200ms = 5% */
+								  /* jitter quality = table[top 1% jitter per packet] */
+								  /* < 10ms = 100% */
+								  /* < 20ms = 90% */
+								  /* < 30ms = 80% */
+								  /* < 40ms = 70% */
+								  /* < 50ms = 50% */
+								  /* 50-100ms = 30% */
+								  /* 100-200ms = 15% */
+								  /* >= 200ms = 5% */
 
 }
 
