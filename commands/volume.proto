@@ -1,5 +1,5 @@
 syntax = "proto2";
-package xxlink;
+package commands;
 
 message VolumeCommand{
 	required double volume = 1;

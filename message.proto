@@ -1,5 +1,4 @@
 syntax = "proto2";
-package xxlink;
 
 import "session.proto";
 import "query.proto";

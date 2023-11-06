@@ -1,5 +1,4 @@
 syntax = "proto2";
-package xxlink;
 
 message StatsResponse{
 	required uint32 players_total = 1;

@@ -1,5 +1,4 @@
 syntax = "proto2";
-package xxlink;
 
 import "commands/bitrate.proto";
 import "commands/equalizer.proto";
@@ -14,16 +13,16 @@ import "commands/volume.proto";
 
 message Command{
 	oneof command{
-		BitrateCommand bitrate = 1;
-		EqualizerCommand equalizer = 2;
-		PauseCommand pause = 3;
-		PlayCommand play = 4;
-		PlayNextCommand play_next = 5;
-		RateCommand rate = 6;
-		SeekCommand seek = 7;
-		TempoCommand tempo = 8;
-		TremoloCommand tremolo = 9;
-		VolumeCommand volume = 10;
+		commands.BitrateCommand bitrate = 1;
+		commands.EqualizerCommand equalizer = 2;
+		commands.PauseCommand pause = 3;
+		commands.PlayCommand play = 4;
+		commands.PlayNextCommand play_next = 5;
+		commands.RateCommand rate = 6;
+		commands.SeekCommand seek = 7;
+		commands.TempoCommand tempo = 8;
+		commands.TremoloCommand tremolo = 9;
+		commands.VolumeCommand volume = 10;
 	}
 }
 

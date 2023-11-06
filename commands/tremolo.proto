@@ -1,5 +1,5 @@
 syntax = "proto2";
-package xxlink;
+package commands;
 
 message TremoloCommand{
 	required double rate = 1;

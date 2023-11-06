@@ -1,8 +1,6 @@
 syntax = "proto2";
-package xxlink;
 
 /* Quality calculations are based on approximate listening experiences */
-
 message ConnectionQuality{
 	required uint32 sent_packets_total = 1;
 	required uint32 sent_packets_avg = 2;

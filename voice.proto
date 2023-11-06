@@ -1,5 +1,4 @@
 syntax = "proto2";
-package xxlink;
 
 message VoiceStateUpdate{
 	optional string guild_id = 1;

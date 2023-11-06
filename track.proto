@@ -1,5 +1,4 @@
 syntax = "proto2";
-package xxlink;
 
 import "query.proto";
 
