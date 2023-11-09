@@ -13,7 +13,7 @@ message SessionClose{
 }
 
 message SessionMessage{
-	required uint32 session = 1;
+	required uint64 session = 1;
 
 	oneof data{
 		SessionOpen open = 2;
