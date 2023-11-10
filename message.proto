@@ -13,6 +13,7 @@ enum Error{
 	TIMEOUT = 0;
 	INVALID_MESSAGE = 1;
 	INVALID_SESSION = 2;
+	OTHER = 3;
 }
 
 message Message{
