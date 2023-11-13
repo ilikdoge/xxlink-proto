@@ -3,18 +3,18 @@ syntax = "proto2";
 import "quality.proto";
 import "stats.proto";
 
-enum State{
-	IDLE = 0;
-	PLAY = 1;
-	PAUSE = 2;
-	LOAD = 3;
-	PLAY_SILENT = 4;
+enum PlaybackState{
+	STATE_IDLE = 0;
+	STATE_PLAY = 1;
+	STATE_PAUSE = 2;
+	STATE_LOAD = 3;
+	STATE_PLAY_SILENT = 4;
 }
 
 message StateResponse{
 	required double time = 1;
 	required double duration = 2;
-	required State state = 3;
+	required PlaybackState state = 3;
 	required double delay = 4; /* time it took from initiating playback to actually playing */
 	required bool source = 5; /* see quality.proto for more info */
 	required uint32 sent_ms = 6;
