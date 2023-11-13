@@ -10,6 +10,7 @@ message VoiceConnectToken {
 	required string endpoint = 6;
 
 	optional bool deaf = 7;
+	optional bool mute = 8;
 }
 
 enum VoiceState{
