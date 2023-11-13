@@ -4,8 +4,8 @@ syntax = "proto2";
 message ConnectionQuality{
 	required uint32 sent_packets_total = 1;
 	required uint32 sent_packets_avg = 2;
-	required uint32 rtc_ping_avg = 3;
-	required uint32 ws_ping_avg = 4;
+	required uint32 rtc_ping_avg = 3; /* 30 sec avg */
+	required uint32 ws_ping_avg = 4; /* 30 sec avg */
 	required uint32 dropped_packets_total = 5;
 	required uint32 dropped_packets_avg = 6; /* avg per sec */
 	required uint32 dropped_packets_high = 7; /* top 1% dropped packets per sec */
@@ -28,11 +28,11 @@ message PlaybackQuality{
 	required bool source = 1; /* source playback with no transcoding */
 	required uint32 bitrate_avg = 2; /* avg bitrate */
 	required uint32 bitrate_max = 3; /* max bitrate */
-	required uint32 sent_frames_total = 4; /* a frame is 2.5ms of opus, a standard 20ms packet is 8 frames */
-	required uint32 idle_frames_total = 5; /* time idling measured in frames */
-	required uint32 dropped_frames_total = 6;
-	required uint32 dropped_frames_avg = 7;
-	required uint32 dropped_frames_high = 8; /* top 1% dropped frames per sec */
+	required uint32 sent_ms_total = 4; /* ms of audio sent */
+	required uint32 idle_ms_total = 5;
+	required uint32 dropped_ms_total = 6;
+	required uint32 dropped_ms_avg = 7;
+	required uint32 dropped_ms_high = 8; /* top 1% dropped frames per sec */
 	required double quality = 9; /* (100% - (1% highest loss percent))^25 */
 }
 

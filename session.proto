@@ -13,14 +13,14 @@ message SessionClose{
 }
 
 message SessionMessage{
-	required uint64 session = 1;
+	required uint64 id = 1;
 
 	oneof data{
 		SessionOpen open = 2;
 		SessionClose close = 3;
 
-		VoiceConnectionControl voice_connection_control = 4;
-		TrackControl track_control = 5;
+		VoiceConnectionControl voice = 4;
+		TrackControl track = 5;
 		Commands commands = 6;
 	}
 }

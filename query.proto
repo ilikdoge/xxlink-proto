@@ -17,8 +17,8 @@ message StateResponse{
 	required State state = 3;
 	required double delay = 4; /* time it took from initiating playback to actually playing */
 	required bool source = 5; /* see quality.proto for more info */
-	required uint32 sent_frames = 6;
-	required uint32 dropped_frames = 7;
+	required uint32 sent_ms = 6;
+	required uint32 dropped_ms = 7;
 }
 
 message QueryResponse{
