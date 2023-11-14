@@ -40,7 +40,8 @@ message VoiceDisconnected{
 message VoiceConnectionControl{
 	oneof data{
 		/* app -> node */
-		VoiceConnectToken connect = 1;
+		VoiceServerUpdate server_update = 1;
+		VoiceStateUpdate state_update = 2;
 
 		/* node -> app */
 		VoiceState state = 2;
