@@ -1,7 +1,7 @@
 syntax = "proto2";
 
 message VoiceStateUpdate{
-	optional string guild_id = 1;
+	required string guild_id = 1;
 	required string user_id = 2;
 	required string session_id = 3;
 	optional string channel_id = 4;
