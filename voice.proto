@@ -44,7 +44,7 @@ message VoiceConnectionControl{
 		VoiceStateUpdate state_update = 2;
 
 		/* node -> app */
-		VoiceState state = 2;
-		VoiceDisconnected disconnected = 3;
+		VoiceState state = 3;
+		VoiceDisconnected disconnected = 4;
 	}
 }
