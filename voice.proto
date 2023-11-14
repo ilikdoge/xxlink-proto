@@ -1,16 +1,18 @@
 syntax = "proto2";
 
-message VoiceConnectToken {
+message VoiceStateUpdate{
 	optional string guild_id = 1;
 	required string user_id = 2;
 	required string session_id = 3;
-	required string channel_id = 4;
+	optional string channel_id = 4;
 
-	required string token = 5;
-	required string endpoint = 6;
+	optional bool deaf = 5;
+	optional bool mute = 6;
+}
 
-	optional bool deaf = 7;
-	optional bool mute = 8;
+message VoiceServerUpdate{
+	required string token = 1;
+	optional string endpoint = 2;
 }
 
 enum VoiceState{
